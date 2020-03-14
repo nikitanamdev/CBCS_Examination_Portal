@@ -1,0 +1,357 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A94E8C38-FC10-46D9-92B1-F3FB73736B44}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44341</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MySQL.Data.EntityFrameworkCore, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySQL.Data.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="MySQL.Data.EntityFrameworkCore.Design, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySQL.Data.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SshNet.Security.Cryptography, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\SshNet.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admitcard.php" />
+    <Content Include="changeRooms.php" />
+    <Content Include="datesheet.php" />
+    <Content Include="downloadSP.php" />
+    <Content Include="ds.php" />
+    <Content Include="facultys.css" />
+    <Content Include="raw\attend.php" />
+    <Content Include="attendance.php" />
+    <Content Include="raw\attsheet.php" />
+    <Content Include="rooms.php" />
+    <Content Include="row.php" />
+    <Content Include="Test\BtechPaper.php" />
+    <Content Include="Test\BtechResult.php" />
+    <Content Include="changePassword.php" />
+    <Content Include="config.php" />
+    <Content Include="ConnectionF.php" />
+    <Content Include="ConnectionR.php" />
+    <Content Include="design.css" />
+    <Content Include="display.php" />
+    <Content Include="display_freeze.php" />
+    <Content Include="Test\do.php" />
+    <Content Include="errors.php" />
+    <Content Include="externalHod.php" />
+    <Content Include="faculty.php" />
+    <Content Include="final_result.php" />
+    <Content Include="forget.php" />
+    <Content Include="fpdf\changelog.htm" />
+    <Content Include="fpdf\doc\acceptpagebreak.htm" />
+    <Content Include="fpdf\doc\addfont.htm" />
+    <Content Include="fpdf\doc\addlink.htm" />
+    <Content Include="fpdf\doc\addpage.htm" />
+    <Content Include="fpdf\doc\aliasnbpages.htm" />
+    <Content Include="fpdf\doc\cell.htm" />
+    <Content Include="fpdf\doc\close.htm" />
+    <Content Include="fpdf\doc\error.htm" />
+    <Content Include="fpdf\doc\footer.htm" />
+    <Content Include="fpdf\doc\getpageheight.htm" />
+    <Content Include="fpdf\doc\getpagewidth.htm" />
+    <Content Include="fpdf\doc\getstringwidth.htm" />
+    <Content Include="fpdf\doc\getx.htm" />
+    <Content Include="fpdf\doc\gety.htm" />
+    <Content Include="fpdf\doc\header.htm" />
+    <Content Include="fpdf\doc\image.htm" />
+    <Content Include="fpdf\doc\index.htm" />
+    <Content Include="fpdf\doc\line.htm" />
+    <Content Include="fpdf\doc\link.htm" />
+    <Content Include="fpdf\doc\ln.htm" />
+    <Content Include="fpdf\doc\multicell.htm" />
+    <Content Include="fpdf\doc\output.htm" />
+    <Content Include="fpdf\doc\pageno.htm" />
+    <Content Include="fpdf\doc\rect.htm" />
+    <Content Include="fpdf\doc\setauthor.htm" />
+    <Content Include="fpdf\doc\setautopagebreak.htm" />
+    <Content Include="fpdf\doc\setcompression.htm" />
+    <Content Include="fpdf\doc\setcreator.htm" />
+    <Content Include="fpdf\doc\setdisplaymode.htm" />
+    <Content Include="fpdf\doc\setdrawcolor.htm" />
+    <Content Include="fpdf\doc\setfillcolor.htm" />
+    <Content Include="fpdf\doc\setfont.htm" />
+    <Content Include="fpdf\doc\setfontsize.htm" />
+    <Content Include="fpdf\doc\setkeywords.htm" />
+    <Content Include="fpdf\doc\setleftmargin.htm" />
+    <Content Include="fpdf\doc\setlinewidth.htm" />
+    <Content Include="fpdf\doc\setlink.htm" />
+    <Content Include="fpdf\doc\setmargins.htm" />
+    <Content Include="fpdf\doc\setrightmargin.htm" />
+    <Content Include="fpdf\doc\setsubject.htm" />
+    <Content Include="fpdf\doc\settextcolor.htm" />
+    <Content Include="fpdf\doc\settitle.htm" />
+    <Content Include="fpdf\doc\settopmargin.htm" />
+    <Content Include="fpdf\doc\setx.htm" />
+    <Content Include="fpdf\doc\setxy.htm" />
+    <Content Include="fpdf\doc\sety.htm" />
+    <Content Include="fpdf\doc\text.htm" />
+    <Content Include="fpdf\doc\write.htm" />
+    <Content Include="fpdf\doc\__construct.htm" />
+    <Content Include="fpdf\FAQ.htm" />
+    <Content Include="fpdf\font\courier.php" />
+    <Content Include="fpdf\font\courierb.php" />
+    <Content Include="fpdf\font\courierbi.php" />
+    <Content Include="fpdf\font\courieri.php" />
+    <Content Include="fpdf\font\helvetica.php" />
+    <Content Include="fpdf\font\helveticab.php" />
+    <Content Include="fpdf\font\helveticabi.php" />
+    <Content Include="fpdf\font\helveticai.php" />
+    <Content Include="fpdf\font\symbol.php" />
+    <Content Include="fpdf\font\times.php" />
+    <Content Include="fpdf\font\timesb.php" />
+    <Content Include="fpdf\font\timesbi.php" />
+    <Content Include="fpdf\font\timesi.php" />
+    <Content Include="fpdf\font\zapfdingbats.php" />
+    <Content Include="fpdf\fpdf.css" />
+    <Content Include="fpdf\fpdf.php" />
+    <Content Include="fpdf\install.txt" />
+    <Content Include="fpdf\license.txt" />
+    <Content Include="fpdf\makefont\makefont.php" />
+    <Content Include="fpdf\makefont\ttfparser.php" />
+    <Content Include="fpdf\tutorial\20k_c1.txt" />
+    <Content Include="fpdf\tutorial\20k_c2.txt" />
+    <Content Include="fpdf\tutorial\calligra.php" />
+    <Content Include="fpdf\tutorial\countries.txt" />
+    <Content Include="fpdf\tutorial\index.htm" />
+    <Content Include="fpdf\tutorial\logo.png" />
+    <Content Include="fpdf\tutorial\makefont.php" />
+    <Content Include="fpdf\tutorial\tuto1.htm" />
+    <Content Include="fpdf\tutorial\tuto1.php" />
+    <Content Include="fpdf\tutorial\tuto2.htm" />
+    <Content Include="fpdf\tutorial\tuto2.php" />
+    <Content Include="fpdf\tutorial\tuto3.htm" />
+    <Content Include="fpdf\tutorial\tuto3.php" />
+    <Content Include="fpdf\tutorial\tuto4.htm" />
+    <Content Include="fpdf\tutorial\tuto4.php" />
+    <Content Include="fpdf\tutorial\tuto5.htm" />
+    <Content Include="fpdf\tutorial\tuto5.php" />
+    <Content Include="fpdf\tutorial\tuto6.htm" />
+    <Content Include="fpdf\tutorial\tuto6.php" />
+    <Content Include="fpdf\tutorial\tuto7.htm" />
+    <Content Include="fpdf\tutorial\tuto7.php" />
+    <Content Include="Gattendance.php" />
+    <Content Include="generate_grades.php" />
+    <Content Include="hod.php" />
+    <Content Include="hod_edit.php" />
+    <Content Include="hod_edit_input.php" />
+    <Content Include="hod_grades.php" />
+    <Content Include="hod_prev_grades.php" />
+    <Content Include="homeA.php" />
+    <Content Include="homeF.php" />
+    <Content Include="homeH.php" />
+    <Content Include="input_external.php" />
+    <Content Include="input_fa.php" />
+    <Content Include="input_grades.php" />
+    <Content Include="input_midterm.php" />
+    <Content Include="input_practical.php" />
+    <Content Include="logo.jpg" />
+    <Content Include="marks_input.php" />
+    <Content Include="Test\papercopy.php" />
+    <Content Include="papers.php" />
+    <Content Include="plan.php" />
+    <Content Include="raw\errors.php" />
+    <Content Include="front.php" />
+    <Content Include="home.php" />
+    <Content Include="raw\index.php" />
+    <Content Include="raw\login.php" />
+    <Content Include="Connection.php" />
+    <Content Include="paper.php" />
+    <Content Include="raw\register.php" />
+    <Content Include="raw\server.php" />
+    <Content Include="raw\style.css" />
+    <Content Include="registeration2.php" />
+    <Content Include="registeration1.html" />
+    <Content Include="result.php" />
+    <Content Include="rollno_external.php" />
+    <Content Include="rollno_fa.php" />
+    <Content Include="rollno_grades.php" />
+    <Content Include="rollno_midterm.php" />
+    <Content Include="rollno_practical.php" />
+    <Content Include="select.php" />
+    <Content Include="selectPapers.php" />
+    <Content Include="show_result.php" />
+    <Content Include="sitting.php" />
+    <Content Include="style.css" />
+    <Content Include="style1.css" />
+    <Content Include="style2.css" />
+    <Content Include="style3.css" />
+    <Content Include="style4.css" />
+    <Content Include="style5.css" />
+    <Content Include="verificationpge.html" />
+    <Content Include="viewSP.php" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fpdf\makefont\cp1250.map" />
+    <Content Include="fpdf\makefont\cp1251.map" />
+    <Content Include="fpdf\makefont\cp1252.map" />
+    <Content Include="fpdf\makefont\cp1253.map" />
+    <Content Include="fpdf\makefont\cp1254.map" />
+    <Content Include="fpdf\makefont\cp1255.map" />
+    <Content Include="fpdf\makefont\cp1257.map" />
+    <Content Include="fpdf\makefont\cp1258.map" />
+    <Content Include="fpdf\makefont\cp874.map" />
+    <Content Include="fpdf\makefont\iso-8859-1.map" />
+    <Content Include="fpdf\makefont\iso-8859-11.map" />
+    <Content Include="fpdf\makefont\iso-8859-15.map" />
+    <Content Include="fpdf\makefont\iso-8859-16.map" />
+    <Content Include="fpdf\makefont\iso-8859-2.map" />
+    <Content Include="fpdf\makefont\iso-8859-4.map" />
+    <Content Include="fpdf\makefont\iso-8859-5.map" />
+    <Content Include="fpdf\makefont\iso-8859-7.map" />
+    <Content Include="fpdf\makefont\iso-8859-9.map" />
+    <Content Include="fpdf\makefont\koi8-r.map" />
+    <Content Include="fpdf\makefont\koi8-u.map" />
+    <Content Include="fpdf\tutorial\calligra.ttf" />
+    <Content Include="fpdf\tutorial\calligra.z" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57076</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8080/phpdemo/WebApplication1</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://localhost:8080</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
