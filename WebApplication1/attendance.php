@@ -35,7 +35,7 @@ $st ='';
 $end ='';
 $code = '';
 $title = '';
-$q = "select `sitting plan`.*,datesheet.Paper,papers.Title from datesheet,rooms,`sitting plan`,papers where `Exam Type` = '$exam' and Date = '$date' and Session = '$session' and datesheet.Course = '$course' and datesheet.Branch = '$branch' and datesheet.Sem = $sem and rooms.`Room No`='$room' and rooms.Block = '$block' and datesheet.Id = `sitting plan`.DS_Id and `sitting plan`.Room = Rooms.Id and papers.Code = datesheet.Paper";
+$q = "select `sitting plan`.*,datesheet.Paper,papers.Title from datesheet,rooms,`sitting plan`,papers where `Exam Type` = '$exam' and Date = '$date' and Session = '$session' and datesheet.Course = '$course' and datesheet.Branch = '$branch' and datesheet.Sem = $sem and rooms.`Room No`='$room' and rooms.Block = '$block' and datesheet.Id = `sitting plan`.DS_Id and `sitting plan`.Room = rooms.Id and papers.Code = datesheet.Paper";
 $results = mysqli_query($db, $q);
 if($row=mysqli_fetch_assoc($results)){
 	$st = $row["Start"];

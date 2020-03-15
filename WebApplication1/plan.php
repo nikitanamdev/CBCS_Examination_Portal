@@ -1,5 +1,4 @@
-﻿<?php include ('config.php') ?>
-<?php
+<?php include ('config.php');
 
 session_start();
 $user = $_SESSION['username'];
@@ -130,9 +129,8 @@ while($row=mysqli_fetch_assoc($results)){
 }
 $q = "drop view SP";
 mysqli_query($db, $q);
-$q = " create view SP as select datesheet.`Exam Type`,datesheet.`Date`,datesheet.`Session`,datesheet.`Paper`,datesheet.`Course`,datesheet.`Branch`,datesheet.`Sem`,rooms.`Room No`,rooms.`Block`,rooms.`Floor`,rooms.`Benches`,rooms.`Two`,`sitting plan`.*,papers.Code,papers.Title from datesheet,rooms,`sitting plan`,papers where `Exam Type` = '$exam' and Date = '$date' and Session = '$session' and datesheet.Id = `sitting plan`.DS_Id and `sitting plan`.Room = Rooms.Id and papers.Code = datesheet.Paper";
+$q = " create view SP as select datesheet.`Exam Type`,datesheet.`Date`,datesheet.`Session`,datesheet.`Paper`,datesheet.`Course`,datesheet.`Branch`,datesheet.`Sem`,rooms.`Room No`,rooms.`Block`,rooms.`Floor`,rooms.`Benches`,rooms.`Two`,`sitting plan`.*,papers.Code,papers.Title from datesheet,rooms,`sitting plan`,papers where `Exam Type` = '$exam' and Date = '$date' and Session = '$session' and datesheet.Id = `sitting plan`.DS_Id and `sitting plan`.Room = rooms.Id and papers.Code = datesheet.Paper";
 mysqli_query($db, $q);
-header('location: viewSP.php');
-
+header('Location: viewSP.php');
 
 ?>

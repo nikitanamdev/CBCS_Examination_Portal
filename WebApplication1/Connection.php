@@ -1,14 +1,8 @@
-﻿<?php include ('config.php') ?>
-<?php session_start();
-
-// initializing variables
+<?php
+session_start();
+include ('config.php');
 $username = "";
-$errors = array(); 
-
-// connect to the database
-
-
-// LOGIN USER
+$errors = array();
 if (isset($_POST['login_user'])) {
 
   $username = mysqli_real_escape_string($db, $_POST['uname']);
@@ -26,6 +20,7 @@ if (isset($_POST['login_user'])) {
   }
   }
   if (count($errors) == 0) {
+        $url = '';
   //	$password = password_hash($password,PASSWORD_DEFAULT);
   if(is_numeric($username)){
   	$query = "SELECT Password FROM register WHERE Enrollment_No='$username'";
@@ -33,27 +28,24 @@ if (isset($_POST['login_user'])) {
 	$row=mysqli_fetch_assoc($results);
   	if ((mysqli_num_rows($results) == 1) and password_verify($password,$row['Password'])){
   	  $_SESSION['username'] = $username;
-	  
-  	  header('location: home.php');
+	  $url = 'home.php';
   	}else {
   		array_push($errors, "Wrong username/password combination");
   	}
   }else if($username == 'admin'){
 	if($password == 'admin'){
 	$_SESSION['username'] = $username;
-	header('location: homeA.php');
+        $url = 'homeA.php';
 	}else{
 		array_push($errors, "Wrong Password, Access Denied for admin login");
 	}
-  
   }else if($username == 'hod'){
 	if($password == 'hod'){
 	$_SESSION['username'] = $username;
-	header('location: homeH.php');
+        $url = 'homeH.php';
 	}else{
 		array_push($errors, "Wrong Password, Access Denied for HOD login");
 	}
-  
   }
   else{
 		$query = "SELECT Password FROM faculty WHERE User='$username'";
@@ -61,12 +53,13 @@ if (isset($_POST['login_user'])) {
 	$row=mysqli_fetch_assoc($results);
   	if ((mysqli_num_rows($results) == 1) and password_verify($password,$row['Password'])){
   	  $_SESSION['username'] = $username;
-	 
-  	  header('location: homeF.php');
+	  $url = 'homeF.php';
   	}else {
   		array_push($errors, "Wrong username/password combination");
   	}
   }
+header("location: $url");
+//echo "<script type='text/javascript'> document.location = '$url' ; </script>";
   }
 }
-?> 
+?>
