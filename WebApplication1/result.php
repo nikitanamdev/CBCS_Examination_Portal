@@ -71,8 +71,9 @@ th {
             <li><a href="home.php">Home</a></li>
             <li><a href="paper.php">Display Papers</a></li>
             <li><a href="#">Results</a></li>
+<li><a href="admitcard.php">Admit Card</a></li>
             <li><a href="#about">Notifications</a></li>
-            <li><a href="#">Admit Card</a></li>
+            
         </ul>
     </div>
     <br>

@@ -111,9 +111,6 @@ height: 25px;
     
 <?php
          $con = $db;// mysqli_connect('localhost','root','root','student');
-         
-         
-
          $year = $_SESSION['year'];
          $subcode = $_SESSION['sub'];
          $sem = $_SESSION['sem'] ;
@@ -134,29 +131,24 @@ height: 25px;
                 $result = mysqli_query($con,$query);
                 $i = 2;
                 $flag=0;
-               while( $obj1 = mysqli_fetch_row($result))
-                 {  $fieldcount = mysqli_num_fields($result);
+                $obj1 = mysqli_fetch_row($result);
+                   $fieldcount = mysqli_num_fields($result);
 
                         while($i<$fieldcount - 4)
                           { if($obj1[$i] == $subcode)
                               { $flag=1;
                                 break;
                               }
+
                               $i+=11;
                             }
-                            if($flag==1)
-                              break;
 
-                            $i=2;
-                  }
 
-                
                 if($flag == 1)
                 {   $index = (int)($i/11) + 1;
                     $colname = "grade" . "$index";
-                    $subcheck = 'CC'.$index;
 
-                    $query = "SELECT * FROM `".$mysql_tb_use."` WHERE `".$subcheck."` = '$subcode' "; //serialno = '1'
+                    $query = "SELECT * FROM `".$mysql_tb_use."` WHERE 1 "; //serialno = '1'
                     $result = mysqli_query($con,$query);
                     while($row = mysqli_fetch_assoc($result))
                     { 
@@ -187,6 +179,7 @@ height: 25px;
 
           }
           $count=array($c1, $c2, $c3, $c4, $c5, $c6, $c7, $c8);
+        
           $q = "SELECT * FROM `graderange` WHERE subcode = '$subcode' ";
           $r = mysqli_query($con,$q);
           $row = mysqli_fetch_assoc($r);
@@ -250,8 +243,8 @@ height: 25px;
                 $result = mysqli_query($con,$query);
                 $i = 2;
                 $flag=0;
-                 while( $obj1 = mysqli_fetch_row($result))
-                 {  $fieldcount = mysqli_num_fields($result);
+                $obj1 = mysqli_fetch_row($result);
+                   $fieldcount = mysqli_num_fields($result);
 
                         while($i<$fieldcount - 4)
                           { if($obj1[$i] == $subcode)
@@ -260,19 +253,13 @@ height: 25px;
                               }
                               $i+=11;
                             }
-                            if($flag==1)
-                              break;
-
-                            $i=2;
-                  }
 
                 
                 if($flag == 1)
                 {   $index = (int)($i/11) + 1;
                     $colname = "gradeM" . "$index";
-                    $subcheck = 'CC'.$index;
 
-                    $query = "SELECT * FROM `".$mysql_tb_use."` WHERE  `".$subcheck."` = '$subcode' "; //serialno = '1'
+                    $query = "SELECT * FROM `".$mysql_tb_use."` WHERE 1 "; //serialno = '1'
                     $result = mysqli_query($con,$query);
                     while($row = mysqli_fetch_assoc($result))
                     { 
@@ -302,7 +289,8 @@ height: 25px;
                 $codeuse++;
 
           }
-          $count=array($c1, $c2, $c3, $c4, $c5, $c6, $c7, $c8);
+          $count1=array($c1, $c2, $c3, $c4, $c5, $c6, $c7, $c8);
+          
           $q = "SELECT * FROM `graderange` WHERE subcode = '$subcode' ";
           $r = mysqli_query($con,$q);
           $row = mysqli_fetch_assoc($r);
@@ -332,7 +320,7 @@ height: 25px;
               <td><?php echo $grades[$x];   ?></td>
               <td><?php  $col1='UM'.$y; echo $row[$col1]; ?></td>
               <td><?php  $col2='LM'.$y; echo $row[$col2]; ?></td>
-              <td><?php echo $count[$x]; ?></td>
+              <td><?php echo $count1[$x]; ?></td>
          </tr>
          <?php
          $x++;
@@ -342,10 +330,14 @@ height: 25px;
       ?>
     
 </table>
+
+
     </div>
     </div>
 
 <!-- table ends -->
+
+
 
 <br><br><br>
     <div >
@@ -355,6 +347,140 @@ height: 25px;
       </form>
     </center>
 	</div>
-    
+<br><br><br>
+    <div class="container"  style="position: relative; height:50vh; width:50vw">
+    <canvas id="myChart2" ></canvas> </div>
+    <br><br><br>
+    <div class="container"  style="position: relative; height:50vh; width:50vw">
+    <canvas id="myChart3" ></canvas>
+  </div>
+<br><br><br>
+  
+<script>
+var colors = [<?php echo '"'.implode('","', $count).'"' ?>];
+ var ctx = document.getElementById('myChart2').getContext('2d');
+
+        Chart.defaults.global.defaultFontColor = 'black';
+         Chart.defaults.global.defaultFontFamily = 'sans-serif';
+
+        var myChart = new Chart(ctx,{
+                      type: 'bar',
+                      
+                      data: {
+                           labels: ['A+','A','B+','B','C+','C','D','F'],
+                           datasets: [{
+                                   label: 'Number of Students',
+                                   data: [colors[0], colors[1], colors[2], colors[3], colors[4], colors[5],
+                                           colors[6],colors[7]],
+                                   backgroundColor: [
+                              'rgba(255, 99, 132, 0.2)',
+                              'rgba(54, 162, 235, 0.2)',
+                              'rgba(255, 206, 86, 0.2)',
+                              'rgba(75, 192, 192, 0.2)',
+                              'rgba(153, 102, 255, 0.2)',
+                              'rgba(255, 159, 64, 0.2)'
+                          ],
+                          borderColor: [
+                              'rgba(255, 99, 132, 1)',
+                              'rgba(54, 162, 235, 1)',
+                              'rgba(255, 206, 86, 1)',
+                              'rgba(75, 192, 192, 1)',
+                              'rgba(153, 102, 255, 1)',
+                              'rgba(255, 159, 64, 1)'
+                          ],
+                          borderWidth: 1
+                           }]
+                      },
+                      options:{title:{
+                                   display:true,
+                                   text:"Actual Data",
+                                   fontSize:25
+                                },
+                                legend:{
+                                  display:false,
+                                 //  position:'right'
+                                },scales: {
+                                  yAxes: [{
+                                      ticks: {
+                                          beginAtZero: true
+                                      }
+                                  }]
+                              }, layout: {
+                                  padding: {
+                                      left: 50,
+                                      
+                                  }
+                              }
+                            }
+
+                 });
+
+
+
+var colors = [<?php echo '"'.implode('","', $count1).'"' ?>];
+
+// 1st chart
+        //var colors = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+        var ctx = document.getElementById('myChart3').getContext('2d');
+
+        Chart.defaults.global.defaultFontColor = 'black';
+         Chart.defaults.global.defaultFontFamily = 'sans-serif';
+
+        var myChart = new Chart(ctx,{
+                      type: 'bar',
+                      data: {
+                           labels: ['A+','A','B+','B','C+','C','D','F'],
+                           datasets: [{
+                                   label: 'Number of Students',
+                                   data: [colors[0], colors[1], colors[2], colors[3], colors[4], colors[5],
+                                           colors[6],colors[7]],
+                                   backgroundColor: [
+                              'rgba(255, 99, 132, 0.2)',
+                              'rgba(54, 162, 235, 0.2)',
+                              'rgba(255, 206, 86, 0.2)',
+                              'rgba(75, 192, 192, 0.2)',
+                              'rgba(153, 102, 255, 0.2)',
+                              'rgba(255, 159, 64, 0.2)'
+                          ],
+                          borderColor: [
+                              'rgba(255, 99, 132, 1)',
+                              'rgba(54, 162, 235, 1)',
+                              'rgba(255, 206, 86, 1)',
+                              'rgba(75, 192, 192, 1)',
+                              'rgba(153, 102, 255, 1)',
+                              'rgba(255, 159, 64, 1)'
+                          ],
+                          borderWidth: 1
+                           }]
+                      },
+                      options:{ title:{
+                                   display:true,
+                                   text:"Moderated Data",
+                                   fontSize:25
+                                },
+                                legend:{
+                                  display:false,
+                                 //  position:'right'
+                                },
+                               scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                },
+                             layout: {
+                                    padding: {
+                                        left: 50,
+                                        
+                                    }
+                                }
+                            }
+
+                 });
+
+   </script>
+
+
 </body>
 </html>

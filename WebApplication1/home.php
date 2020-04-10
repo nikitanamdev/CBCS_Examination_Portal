@@ -33,7 +33,7 @@ $_SESSION['res'] = 'result.php';
             <li><a href="paper.php">Display Papers</a></li>
             <li><a href="result.php">Results</a></li>
             
-	    <li><a href="#">Admit Card</a></li>
+	    <li><a href="admitcard.php">Admit Card</a></li>
             <li><a href="#about">Notifications</a></li>
         </ul>
     </div>

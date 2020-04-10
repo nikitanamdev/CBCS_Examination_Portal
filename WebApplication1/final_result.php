@@ -71,8 +71,8 @@ th {
             <li><a href="home.php">Home</a></li>
             <li><a href="paper.php">Display Papers</a></li>
             <li><a href="result.php">Results</a></li>
+            <li><a href="admitcard.php">Admit Card</a></li>
             <li><a href="#about">Notifications</a></li>
-            <li><a href="#">Admit Card</a></li>
         </ul>
     </div>
     <br>
@@ -461,6 +461,12 @@ mysqli_free_result($result);
   <h3>IGDTUW-EXAMINATION DIVISION</h3>
 </div>
 </footer> -->
+<br>
+<br>
 
+<a href="marksheet.php" target="_blank"><button type="button" style="width:150px;" >Print Marksheet </button></a>
+<br>
+<br>
+<br>
 </body>
 </html>
