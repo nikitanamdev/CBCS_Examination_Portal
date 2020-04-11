@@ -131,7 +131,7 @@ $results = mysqli_query($db, $q);
     <td><?php echo $paper; ?></td>
 	<td><?php echo $num; ?>(Rollno from : <?php echo $st; ?> to <?php echo $end; ?>)</td>
 	<script>document.getElementById("id").value ++;</script>
-	<td><button name="set" style="width:50%; border-radius: 20px;  " onclick ="location.href = '#'" type="submit" value="submit">Download Seat Matrix</button></td>
+	<td><?php echo "<button name='set' style='width:50%; border-radius: 20px;  ' onclick =\"location.href='row.php?id=$sp'\" type='submit' value='submit'>" ?>Download Seat Matrix</button></td>
 	</tr>
 	<?php
 	$i++;  
