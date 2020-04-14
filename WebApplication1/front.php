@@ -1,5 +1,4 @@
-﻿<?php include('Connection.php'); ?>
-<?php
+<?php include('Connection.php'); 
   if (isset($_GET['logout'])) {
   mysqli_close($db);
   	session_destroy();
@@ -34,7 +33,7 @@
 	</div>
 	<br>
 	<hr size='10'; color='green'></hr>
-    <div id="navbar" style="margin-top:-0.5%; ">
+    <div id="navbar" style="margin-top:-0.5%;">
         <ul>
             <li><a class = "active" href="#home">Home</a></li>
             <li><a href="#news">Registration for convocation 2018</a></li>
@@ -60,7 +59,7 @@
   <div class="marquee" style="background:#E4FFC0">
   <p style="color:darkseagreen">For Students Admitted from 2019, Register for CBCS Examination Portal ,<a href="registeration1.html" style="color:green">Click Here!</a></p>
 </div>
-	
+
 	<div class="leftnotice" style="margin-left:40%">
 		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Chrome_icon_%28September_2014%29.svg/1024px-Google_Chrome_icon_%28September_2014%29.svg.png" class="img-circle" alt="Logo" width="60" height="60">
 		<p>Best Viewed in Google Chrome</p>
@@ -75,17 +74,17 @@
       <p>1. Create User Id and Password using Registration System.</p>
       <p>2. Login with created User Id and Password.</p>
       <p>3. Fill Examination From.</p>
-      <div id="det" style="font-size: 13px; margin-top:15%">
-		    <p style="font-weight: bold;"> For assistance Contact Us :</p>
-        <p>Ms Khyati Ahlawat,Assistant Prof,CSE</p>
-        <p>Er Sagar Goel,System Analyst</p>
-      </div>
+     <!-- <div id="det" style="font-size: 13px; margin-top:15%">-->
+        <p style="font-weight: bold;" align=right> For assistance Contact Us :</p>
+        <p align=right>Ms Khyati Ahlawat,Assistant Prof,CSE</p>
+        <p align=right>Er Sagar Goel,System Analyst</p>
+      <!-- </div>-->
       <div class="marquee1">
   <p style="font-weight: bold;">For Any Discrepency Please Mail To :support.exam@igdtuw.ac.in</p>
 </div>
     </div>
-
-       <div class ="frm">
+<br><br><br><br><br>
+  <div class="frm" style="float:left">
 <form action="front.php" method="post"  onsubmit="return checkform(this);">
   
 
@@ -100,7 +99,6 @@
     <input type="password" placeholder="Password" name="psw" required autocomplete="off">
  <br>
    
-  </div>
    
  <!-- START CAPTCHA -->
 <br>
@@ -118,27 +116,26 @@ Type the above number:<br>
 </div>
 <br><br>
 <!-- END CAPTCHA -->
-
-
-  <div class="container" style="background-color:white">
-     <button type="submit" name="login_user" class="sbmtbtn" style="background:green">Login</button>
+     <button type="submit" name="login_user"  class="sbmtbtn" style="background:green; float:center ">Login</button>
     <br>
-    <span class="psw"> <a href="forget.php">Forgot password?</a></span>
+    <span class="psw"> <a href="forget.php">Forgot password?</a></span><br>
+<hr>
+    <p>New Student<a href="registeration1.html">Registere Here</a></p>
+<hr>
+    <p>New Faculty<a href="faculty.php">Registere Here</a></p>
 
   </div>
-  <hr>
-  <div class="nw" style="text-align: center;">
-  	<p>New Student<a href="registeration1.html">Registere Here</a></p>
-	<p>New Faculty<a href="faculty.php">Registere Here</a></p>
-  </div>
+
+ 
 </form> 
+</div>	     
+
 </div>
 	
-</div>
 <div id="last" >
 	<h2 style="color: white">Copyright of IGDTUW</h2>
 </div>
-<div id ="blc">
+<div id ="blc" style="margin-top: -1%">
 	<h2>IGDTUW-EXAMINATION DIVISION</h2>
 </div>
 <script type="text/javascript">

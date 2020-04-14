@@ -38,9 +38,10 @@ li a.active {
 #maincontent {
 
    background-color:#f3f3f3;
-  margin: 10px 15px 0px 15px;
+  margin: 1%;
   padding: 10px;
   border-radius: 10px;
+  width:100%;
 
 }
 .notice
@@ -51,8 +52,10 @@ li a.active {
 }
 .frm{
   border: 3px solid #f1f1f1;
-  margin: -320px 1000px 100px 50px;
+  width:30%;
+margin-top: -300%;
   background-color: white;
+float:left;
 }
 
 /* Full-width inputs */
@@ -85,8 +88,6 @@ button:hover {
 /* Add padding to containers */
 .container {
   padding: 16px;
-  margin-left: 5px;
-  margin-right: 5px;
 }
 .sbmtbtn {
   width: auto;
@@ -95,9 +96,9 @@ button:hover {
 }
 .lgn
 {
+width:auto;
   background-color: maroon;
   padding: 2px;
-  margin: 0;
   color: white
 }
 /* The "Forgot password" text */
@@ -134,8 +135,8 @@ span.psw {
 #maincontent
 {
    background-color:#f3f3f3;
-  margin: 10px 15px 0px 15px;
-  padding: 10px;
+  margin: 1%;
+  padding: 2%;
   border-radius: 10px;
 
 }

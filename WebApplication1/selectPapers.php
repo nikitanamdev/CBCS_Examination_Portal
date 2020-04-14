@@ -15,8 +15,8 @@
     $(document).ready(function(){
         $("#add").click(function(){
 		ind =ind +1;
-            $("#new").append(`<table cellpadding=25px id="`+ind+`">
-			<tr><td>Programme <select class='form-control' name='select1` + ind +  `' id="select1` + ind + `" required>
+            $("#new").append(`<table style="font-size:20px; color:green;font-weight:bold"  cellpadding=25px id="`+ind+`">
+			<tr align="center"  style="font-color:green "><td >Programme<br> <select class='form-control' name='select1` + ind +  `' id="select1` + ind + `" required>
 			<option value=''>Please select from below</option>
 			<option value='B.Tech IT'>B.Tech IT</option>
 			<option value='B.Tech CSE'>B.Tech CSE</option>
@@ -31,11 +31,11 @@
 			<option value='M.Tech ECE'>M.Tech ECE(VLSI Design)</option>
 			<option value='MCA'>Master of Computer Application(MCA)</option></select></td>
 
-			<td>Semester <select class='form-control' name='select3` + ind +  `' id="select3` + ind + `" required>
+			<td >Semester <br><select class='form-control' name='select3` + ind +  `' id="select3` + ind + `" required>
 			<option value='1' selected>1</option>
 			<option value='2'>2</option></select></td>
 
-			<td>Subject <select class='form-control' name='select2` + ind +  `' id="select2` + ind + `" required>
+			<td>Subject<br> <select class='form-control' name='select2` + ind +  `' id="select2` + ind + `" required>
 			<option value=''>Please select from below</option>
 			<option name='M.Tech IT 1' value='MIS-101'>MIS-101 Advanced Programming</option>
 			<option name='M.Tech IT 1' value='MIS-103'>MIS-103 Advanced Data Structure and Algorithms</option>
@@ -247,7 +247,7 @@
 			<option name='B.Tech MAE 2' value='HMC-110'>HMC-110 Humanities and Social Science</option>
 			<option name='B.Tech MAE 2' value='BCS-110'>BCS-110 Programming in C Language</option></select></td>
 			
-			<td id="range` +ind+`">Select Batch <select class='form-control' name='select4` + ind +  `' id="select4` + ind + `" required>
+			<td id="range` +ind+`">Select Batch<br> <select class='form-control' name='select4` + ind +  `' id="select4` + ind + `" required>
 			<option value='Yes'>Yes</option>
 			<option value='No' selected>No</option></td>
 
@@ -377,7 +377,7 @@
 
 	   ?> 
 	   </table>
-	   <button id="add">Add new Paper</button>
+	   <button id="add" style="font-size:18px">ADD NEW PAPER</button>
     <p align="center" style="color:green">Click the above button to add new paper.</p>
     </div>
 	<form action="" method="POST" >

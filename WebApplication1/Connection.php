@@ -33,14 +33,20 @@ if (isset($_POST['login_user'])) {
   		array_push($errors, "Wrong username/password combination");
   	}
   }else if($username == 'admin'){
-	if($password == 'admin'){
+        $query = "SELECT Password FROM users WHERE User='$username'";
+  	$results = mysqli_query($db, $query);
+	$row=mysqli_fetch_assoc($results);
+	if($password == $row['Password']){
 	$_SESSION['username'] = $username;
         $url = 'homeA.php';
 	}else{
 		array_push($errors, "Wrong Password, Access Denied for admin login");
 	}
   }else if($username == 'hod'){
-	if($password == 'hod'){
+        $query = "SELECT Password FROM users WHERE User='$username'";
+  	$results = mysqli_query($db, $query);
+	$row=mysqli_fetch_assoc($results);
+	if($password == $row['Password']){
 	$_SESSION['username'] = $username;
         $url = 'homeH.php';
 	}else{
