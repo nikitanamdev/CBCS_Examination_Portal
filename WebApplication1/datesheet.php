@@ -53,7 +53,8 @@ input{
 			<li><a href="datesheet.php">Enter Date Sheet</a></li>
 			<li><a href="rooms.php">Manage Rooms</a></li>
 			<li><a href="sitting.php">Generate Seating Plan</a></li>
-			<li><a href="#">Generate Attendance</a></li>
+			<li><a href="Gattendance.php">Generate Attendance</a></li>
+                        <li><a href="dean_ms1.php">Generate Marksheet</a></li>
     </div>
     <br>
     <div id="navbar1">
